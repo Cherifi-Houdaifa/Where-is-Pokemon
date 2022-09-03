@@ -1,0 +1,87 @@
+.game-content {
+    position: relative;
+}
+.game-content > .timer {
+    position: fixed;
+    background-color: #00000034;
+    top: 12%;
+    right: calc(50% - 70px);
+    width: 140px;
+    height: 50px;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game-content > .timer > p {
+    font-size: 28px;
+}
+.game-content > .image {
+    width: 100%;
+    overflow-x: scroll;
+}
+.game-content > .image > img {
+    width: max(100%, 900px);
+}
+.name-prompt {
+
+}
+.name-prompt > h1 {
+    text-align: center;
+    font-weight: 500;
+}
+.name-prompt > h2 {
+    text-align: center;
+    font-weight: 500;
+}
+.name-prompt > div {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.name-prompt > div > input[type="text"] {    
+    box-shadow: inset #abacaf 0 0 0 2px;
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+    appearance: none;
+    width: 100%;
+    position: relative;
+    border-radius: 3px;
+    padding: 9px 12px;
+    line-height: 1.4;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    height: 20px;
+    transition: all .2s ease;
+    width: 200px;
+}
+.name-prompt > div > input[type="text"]:hover{
+    box-shadow: 0 0 0 0 #fff inset, #FFF814 0 0 0 2px;
+}
+.name-prompt > div > input[type="text"]:focus{
+    background: #fff;
+    outline: 0;
+    box-shadow: 0 0 0 0 #fff inset, #FFF814 0 0 0 3px;
+}
+.name-prompt > div > input[type="button"] {
+    
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #FFF814;
+    line-height: 1.15;
+    font-size: 16px;
+}
+.name-prompt > div > input[type="button"]:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #FFF814;
+}

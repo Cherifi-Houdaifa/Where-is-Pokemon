@@ -1,0 +1,23 @@
+nav {
+    height: 65px;
+    background-color: #FFF814;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav > h1 {
+    margin: 0;
+    font-size: max(3vw, 30px);
+    font-weight: 500;
+}
+nav > div {
+    width: max(20vw, 170px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav > div > a {
+    color: #000;
+    text-decoration: none;
+    font-size: max(2vw, 20px);
+}
