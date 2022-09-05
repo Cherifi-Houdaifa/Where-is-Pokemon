@@ -3,12 +3,12 @@ import useTimer from 'easytimer-react-hook';
 import pikachuPuzzle from '../assets/pikachu-puzzle.png';
 import '../styles/Game.css';
 
-import { addRecord } from "../firebase";
+import { addRecord } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
 export default function Pikachu() {
     const [playing, setPlaying] = useState(true);
-    const [nameInput, setNameInput] = useState("");
+    const [nameInput, setNameInput] = useState('');
     const [timer] = useTimer();
     const img = useRef();
 
@@ -38,31 +38,34 @@ export default function Pikachu() {
             // code for player win
             // 0. stop timer
             timer.pause();
-            
+
             setPlaying(false);
-            
         }
     };
 
     const inputNameChangeHandler = (e) => {
         setNameInput(e.target.value);
-    }
+    };
 
     const submitBtnHandler = (e) => {
         // 1. make sure name is not too long
-        if (nameInput === "") {
-            alert("You Must Provide a name");
-            return
+        if (nameInput === '') {
+            alert('You Must Provide a name');
+            return;
         }
         if (nameInput.length > 20) {
-            alert("Too Many Charachters");
+            alert('Too Many Charachters');
             return;
         }
         // 2. add Time to database
-        addRecord(nameInput, (timer.getTimeValues().minutes * 60) + timer.getTimeValues().seconds, "pikachuRank");
+        addRecord(
+            nameInput,
+            timer.getTimeValues().minutes * 60 + timer.getTimeValues().seconds,
+            'pikachuRank'
+        );
         // 3. redirect to /pikachurank
-        navigate("/pikachurank");
-    }
+        navigate('/pikachurank');
+    };
 
     return (
         <>
@@ -91,8 +94,19 @@ export default function Pikachu() {
                         {('0' + timer.getTimeValues().seconds).slice(-2)}
                     </h2>
                     <div>
-                        <input type="text" placeholder='Name' autoComplete='off' value={nameInput} onChange={inputNameChangeHandler} maxLength={20}/>
-                        <input type="button" value="Submit Record" onClick={submitBtnHandler}/>
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            autoComplete="off"
+                            value={nameInput}
+                            onChange={inputNameChangeHandler}
+                            maxLength={20}
+                        />
+                        <input
+                            type="button"
+                            value="Submit Record"
+                            onClick={submitBtnHandler}
+                        />
                     </div>
                 </div>
             )}

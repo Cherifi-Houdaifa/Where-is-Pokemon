@@ -43,12 +43,16 @@ module.exports = {
             favicon: path.resolve(__dirname, 'public/favicon.ico'),
         }),
         new webpack.DefinePlugin({
-            "process.env.apiKey": JSON.stringify(process.env.apiKey),
-            "process.env.authDomain": JSON.stringify(process.env.authDomain),
-            "process.env.projectId": JSON.stringify(process.env.projectId),
-            "process.env.storageBucket": JSON.stringify(process.env.storageBucket),
-            "process.env.messagingSenderId": JSON.stringify(process.env.messagingSenderId),
-            "process.env.appId": JSON.stringify(process.env.appId),
+            'process.env.apiKey': JSON.stringify(process.env.apiKey),
+            'process.env.authDomain': JSON.stringify(process.env.authDomain),
+            'process.env.projectId': JSON.stringify(process.env.projectId),
+            'process.env.storageBucket': JSON.stringify(
+                process.env.storageBucket
+            ),
+            'process.env.messagingSenderId': JSON.stringify(
+                process.env.messagingSenderId
+            ),
+            'process.env.appId': JSON.stringify(process.env.appId),
         }),
     ],
 };

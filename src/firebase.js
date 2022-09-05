@@ -1,5 +1,12 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    orderBy,
+    query,
+} from 'firebase/firestore';
 
 // Firebase configuration
 const config = {
@@ -16,24 +23,23 @@ const app = initializeApp(config);
 
 const db = getFirestore(app);
 
-export async function addRecord (name, record, collec) {
+export async function addRecord(name, record, collec) {
     try {
         const docRef = await addDoc(collection(db, collec), {
             name: name,
-            record: record
+            record: record,
         });
         console.log(docRef.id);
-    }
-    catch (err) {
+    } catch (err) {
         console.error(err);
     }
 }
-export async function getRecords (collec) {
+export async function getRecords(collec) {
     try {
-        var docs = await getDocs(collection(db, collec));
+        const q = query(collection(db, collec), orderBy('record', 'asc'));
+        var docs = await getDocs(q);
+    } catch (err) {
+        console.error(err);
     }
-    catch (err) {
-        console.error(err)
-    }
-    return docs;
+    return docs.docs;
 }

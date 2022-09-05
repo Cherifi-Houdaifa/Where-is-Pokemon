@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Pikachu from './pages/Pikachu';
 import Munchlax from './pages/Munchlax';
 import Rank from './pages/Rank';
+import About from './pages/About';
 
 export default function App() {
     return (
@@ -13,6 +14,7 @@ export default function App() {
             <NavBar />
             <Routes>
                 <Route path='/' element={<Home />}/>
+                <Route path='/about' element={<About />}/>
                 <Route path='/pikachu' element={<Pikachu />}/>
                 <Route path='/munchlax' element={<Munchlax />}/>
                 <Route path='/pikachurank' element={<Rank collec="pikachuRank"/>} />

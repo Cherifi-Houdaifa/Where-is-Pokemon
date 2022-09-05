@@ -1,0 +1,11 @@
+.about-content {
+    min-height: calc(100vh - 65px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-content > a {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #000;
+}
